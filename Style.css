@@ -11,6 +11,7 @@
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes at least the full viewport height */
     font-family: Arial, sans-serif;
+    
   }
   
   /* Navbar styles */
@@ -18,19 +19,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #57afca;
     padding: 10px 20px;
     color: white;
   }
   
   .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-display: center;
+    padding-left: 200px;
   }
   
   .navbar-links {
     list-style: none;
     display: flex;
     margin: 0;
+    padding-right: 200px;
   }
   
   .navbar-links li {
@@ -40,7 +44,18 @@
   .navbar-links a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-links a:hover {
+    background-color: #1da1f2;
+  }
+
+  .navbar-links a.active {
+    background-color: #0887d6;
+    border-radius: 5px;
   }
   
   .navbar-toggle {
@@ -56,29 +71,43 @@
     margin: 4px 0;
   }
   
+/* spacing */
+
+.padding-spacing-between {
+    padding: 40px
+}
+
   /* Main content */
   .content {
     flex: 1; /* Allow the content to grow and push the footer down */
+    display: flex;
+    justify-content: left; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center text inside the container */
     padding: 20px;
-  }
+}
+
+
   
   /* Footer styles */
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #cfc091;
+    color: rgb(61, 59, 59);
+    padding: 10px;
   }
   
   .footer-section {
     flex: 1;
     text-align: center;
   }
-  
+
+  /* Contact Us link */
   .footer-section.left a {
-    color: white;
+    color: rgb(61, 59, 59);
     text-decoration: none;
     font-size: 1rem;
   }
@@ -87,6 +116,7 @@
     text-decoration: underline;
   }
   
+  /* social media */
   .footer-section.center a {
     color: white;
     font-size: 1.5rem;
@@ -95,9 +125,28 @@
   }
   
   .footer-section.center a:hover {
-    color: #1da1f2; /* Change color on hover (e.g., Twitter blue) */
+    color: #1da1f2; 
+  }
+
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
   }
   
+  /* Image sizes */
+  .icon-button img {
+    width: 32px; 
+    height: 32px; 
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-button:hover img {
+    transform: scale(1.1); 
+  }
+
+/* Address */
   .footer-section.right p {
     margin: 0;
     font-size: 1rem;
@@ -132,5 +181,8 @@
   
     .footer-section {
       margin: 10px 0;
+    }
+    .footer-section.center {
+        flex-direction: row; /* Ensure buttons stay in a row on mobile */
     }
   }
