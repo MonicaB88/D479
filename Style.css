@@ -1,16 +1,17 @@
-/* Basic reset */
-* {
+/* Default */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
-  /* Make the body a flex container */
+  /* Body is a flex container */
   body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-    font-family: Arial, sans-serif;
+    margin: 0;
+    
     
   }
   
@@ -74,23 +75,222 @@
 /* spacing */
 
 .padding-spacing-between {
-    padding: 40px
+    padding: 50px
 }
 
-  /* Main content */
+/* Main content */
+.content {
+  flex: 1; /* Allow the content to grow and push the footer down */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack content vertically */
+  text-align: center; /* Center text inside the container */
+  padding: 20px; /* Add padding inside the content area */
+  max-width: 1200px; /* Limit the width of the content area */
+  margin: 0 auto; /* Center the content area horizontally */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  padding-top: 10px;
+}
+
+/* Optional: Add some styling to make it look better */
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Content Responsive */
+@media (max-width: 768px) {
   .content {
-    flex: 1; /* Allow the content to grow and push the footer down */
-    display: flex;
-    justify-content: left; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack content vertically */
-    text-align: center; /* Center text inside the container */
-    padding: 20px;
+      padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+      font-size: 2em; /* Smaller font size for headings on smaller screens */
+  }
+
+  p {
+      font-size: 1em; /* Smaller font size for paragraphs on smaller screens */
+  }
 }
 
+@media (max-width: 480px) {
+  .content {
+      padding: 5px; /* Further reduce padding on very small screens */
+  }
 
-  
-  /* Footer styles */
+  h1 {
+      font-size: 1.5em; /* Even smaller font size for headings */
+  }
+
+  p {
+      font-size: 0.9em; /* Even smaller font size for paragraphs */
+  }
+}
+
+/*Book Now button */
+.book-now-button {
+  display: inline-block; /* Make the link behave like a button */
+  padding: 10px 20px; /* Add padding for better clickability */
+  background-color: #007BFF; /* Blue background color */
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline from the link */
+  font-size: 1.2em; /* Set font size */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 20px; /* Add space above the button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.book-now-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive button */
+@media (max-width: 768px) {
+  .book-now-button {
+      font-size: 1em; /* Smaller font size on smaller screens */
+      padding: 8px 16px; /* Smaller padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .book-now-button {
+      font-size: 0.9em; /* Even smaller font size on very small screens */
+      padding: 6px 12px; /* Even smaller padding on very small screens */
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 90%; /* Increase the width of the form */
+  width: 800px; /* Set a fixed maximum width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Left-Aligned Labels for Text Inputs and Textarea */
+.form-group.text-group {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Label width and input width */
+  gap: 10px; /* Space between label and input */
+  align-items: center; /* Vertically align label and input */
+  margin-bottom: 15px; /* Reduce margin between form groups */
+}
+
+.form-group.text-group label {
+  font-weight: bold;
+  text-align: left; /* Left-align the label */
+}
+
+.form-group.text-group input[type="text"],
+.form-group.text-group input[type="email"],
+.form-group.text-group textarea {
+  width: 100%;
+  padding: 8px; /* Reduce padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-group.text-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Centered Labels for Radio Buttons and Checkboxes */
+.form-group.radio-group,
+.form-group.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the label and options */
+  margin-bottom: 15px; /* Reduce margin between form groups */
+}
+
+.form-group.radio-group label,
+.form-group.checkbox-group label {
+  font-weight: bold;
+  margin-bottom: 10px; /* Space between label and options */
+}
+
+/* Arrange radio buttons and checkboxes in a column */
+.form-group.radio-group div,
+.form-group.checkbox-group div {
+  display: flex;
+  align-items: center; /* Align radio/checkbox with its label */
+  margin-bottom: 5px; /* Space between options */
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Submit Button */
+.form-group button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-form {
+      padding: 15px;
+  }
+
+  .form-group.text-group {
+      grid-template-columns: 1fr; /* Switch to single column on smaller screens */
+  }
+
+  .form-group.text-group label {
+      text-align: left; /* Ensure labels are left-aligned */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+      font-size: 0.9em;
+  }
+
+  .form-group button {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+      padding: 10px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+      font-size: 0.8em;
+  }
+
+  .form-group button {
+      font-size: 0.8em;
+  }
+}
+
+  /* Footer */
   .footer {
     display: flex;
     justify-content: space-between;
@@ -152,7 +352,7 @@
     font-size: 1rem;
   }
   
-  /* Responsive styles */
+  /* Responsive footer */
   @media (max-width: 768px) {
     .navbar-links {
       display: none;
