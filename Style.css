@@ -176,13 +176,42 @@ body, html {
   }
 }
 
+/*banner*/
+.banner {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.banner img {
+  width: 120px;
+  height: 130px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.banner img:hover {
+transform: scale(2);
+}
+
+@media (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner img {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
+
 /* Contact Form */
 .contact-form {
   max-width: 90%; /* Increase the width of the form */
   width: 800px; /* Set a fixed maximum width */
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #e7daaf;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -258,6 +287,10 @@ body, html {
 .form-group button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.form-group button:hover {
+background-color: rgb(31, 238, 238);
 }
 
 /* Responsive Adjustments */
